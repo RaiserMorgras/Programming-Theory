@@ -17,11 +17,13 @@ def storage(x):
 
 def read(mem, addr):
     """Function reads the value located at address 'addr' of storage 'mem'"""
+    addr = nat(addr)
     return 0 if addr >= len(mem) else mem[addr]
 
 
 def write(mem, addr, val):  
     """Function writes value 'val' into storage 'mem' at addres 'addr'"""
+    addr = nat(addr)
     need = addr - len(mem) + 1  # lack of memory
     if need > 0:
         mem.extend(need * [0])
