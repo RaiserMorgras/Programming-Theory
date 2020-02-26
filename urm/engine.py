@@ -40,7 +40,8 @@ def run(prgm, *args):
     Returns
         result of running if the program 'prgm' halts
     """
-    mem = list(args)
+    mem = [0]
+    mem.extend(list(args))
     ic, lprgm = 1, len(prgm)
     while 1 <= ic <= lprgm:
         stm = prgm[ic - 1]
